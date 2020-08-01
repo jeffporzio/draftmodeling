@@ -1,0 +1,36 @@
+
+To decide value: 
+    use data from MC sims to know what 1st, 2nd, 3rd, thresholds are for each category to predice the 
+    increased value that player adds to the team. 
+
+NN: 
+    Use NN to predict value of a player based on all the data we have 
+        (Player stats, team's current stats, money, number of players, 
+            maybe historical data about each threshhold
+            Other team's stats? Probably.
+        )
+
+    Rough flow: 
+    while true: 
+        Do draft with NN deciding value of each player
+        Do a league to see how each team scores
+        Organize the results of the league's scores into training set data
+        Train NN with that data, repeat
+
+    Things we need: 
+    - Idea of what the NN should use
+    - Tools to convert the league results into training data
+        + What training data it needs 
+    -  Can I turn the 23+ decisions the NN made into useful data? Q-Learning?
+
+    - Decide who wins what points for a league and report that 
+
+    - Better to have the NN predict value and have a separate algo do the auctioning? I think yes.
+
+    - Separate agents for valuing the next player to pick when it's our turn?
+
+https://medium.com/@awjuliani/simple-reinforcement-learning-with-tensorflow-part-4-deep-q-networks-and-beyond-8438a3e2b8df
+
+https://github.com/awjuliani/DeepRL-Agents/blob/master/Double-Dueling-DQN.ipynb
+
+https://www.tensorflow.org/agents/tutorials/0_intro_rl **** 
