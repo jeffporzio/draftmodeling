@@ -9,11 +9,11 @@ N = int(5000)
 def main(): 
     
     stats = []
-    print "Starting MC Simulation..."
+    print("Starting MC Simulation...")
     for i in range(0,N):
 
         if i % 1000 == 0 and i > 0: 
-            print "Compeleted %i of %i iterations" % (i, N)
+            print( "Compeleted %i of %i iterations" % (i, N))
 
         league = League()
         league.doDraft()
@@ -21,7 +21,7 @@ def main():
         leagueStats = LeagueStats(league)
 
         stats.append(leagueStats)
-    print "Finished MC Simulation."
+    print("Finished MC Simulation.")
 
     aggregateStats(stats)
     

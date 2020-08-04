@@ -3,6 +3,7 @@ from playerpool import Playerpool
 from constants import NUM_TEAMS
 import numpy as np
 from leagueStats import LeagueStats
+from functools import reduce
 
 
 class League():
@@ -43,7 +44,7 @@ class League():
 
 
     def disp(self):
-        for team in league.final_teams:
+        for team in self.final_teams:
             team.disp()
 
 def main():

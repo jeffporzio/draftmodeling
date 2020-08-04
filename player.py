@@ -17,13 +17,13 @@ class Player():
         self.position = "INIT"
 
     def disp(self): 
-        print "Name: ", self.name
-        print "Runs: ", self.runs
-        print "RBIs: ", self.rbi
-        print "Homeruns: ", self.homeruns
-        print "Stolen bases: ", self.stolen_bases
-        print "Batting Avg: ", self.batting_avg
-        print "Strike outs: ", self.strike_outs
-        print "Position: ", self.position
-        print "Positions allowed: ", self.positions_allowed
-        print
+        print( "Name: ", self.name)
+        print( "Runs: ", self.runs)
+        print( "RBIs: ", self.rbi)
+        print( "Homeruns: ", self.homeruns)
+        print( "Stolen bases: ", self.stolen_bases)
+        print( "Batting Avg: ", self.batting_avg)
+        print( "Strike outs: ", self.strike_outs)
+        print( "Position: ", self.position)
+        print( "Positions allowed: ", self.positions_allowed)
+        print()

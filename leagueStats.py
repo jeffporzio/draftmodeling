@@ -35,10 +35,10 @@ class LeagueStats():
         self.strike_outs.sort(reverse=True)
 
     def disp(self): 
-        print "Runs: %f +/- %f" % (self.runs_avg, self.runs_std)
-        print "RBI: %f +/- %f" % (self.rbi_avg, self.rbi_std)
-        print "HRs: %f +/- %f" % (self.homeruns_avg, self.homeruns_std)
-        print "SBs: %f +/- %f" % (self.stolen_bases_avg, self.stolen_bases_std)
-        print "AVG: %f +/- %f" % (self.batting_avg_avg, self.batting_avg_std)
-        print "SOs: %f +/- %f" % (self.strike_outs_avg, self.strike_outs_std)
+        print( "Runs: %f +/- %f" % (self.runs_avg, self.runs_std))
+        print( "RBI: %f +/- %f" % (self.rbi_avg, self.rbi_std))
+        print( "HRs: %f +/- %f" % (self.homeruns_avg, self.homeruns_std))
+        print( "SBs: %f +/- %f" % (self.stolen_bases_avg, self.stolen_bases_std))
+        print( "AVG: %f +/- %f" % (self.batting_avg_avg, self.batting_avg_std))
+        print( "SOs: %f +/- %f" % (self.strike_outs_avg, self.strike_outs_std))
 

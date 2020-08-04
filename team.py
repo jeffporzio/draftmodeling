@@ -77,19 +77,17 @@ class Team():
 
 
     def disp(self):
-        print
-        print "*** Roster: *** "
-        print "Size: ", len(self.player_list)
+        print()
+        print( "*** Roster: *** ")
+        print( "Size: ", len(self.player_list))
         for player in self.player_list: 
-            print player.name
+            print(player.name)
 
-        print "Runs: ", self.runs
-        print "RBI: ", self.rbi
-        print "Homeruns: ", self.homeruns
-        print "Stolen bases:", self.stolen_bases
-        print "Batting AVG: ", self.batting_avg
-        print "Stike outs: ", self.strike_outs
-
-        print "Remaining Money: ", self.money
-        
-        print
+        print( "Runs: ", self.runs)
+        print( "RBI: ", self.rbi)
+        print( "Homeruns: ", self.homeruns)
+        print( "Stolen bases:", self.stolen_bases)
+        print( "Batting AVG: ", self.batting_avg)
+        print( "Stike outs: ", self.strike_outs)
+        print( "Remaining Money: ", self.money)
+        print()

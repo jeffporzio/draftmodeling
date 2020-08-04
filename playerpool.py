@@ -26,7 +26,7 @@ class Playerpool():
 
             with open(dir+file, "r") as f: 
                 reader = csv.reader(f)
-                reader.next() # Skip header line
+                next(reader) # Skip header line
                 for row in reader: 
                     name = row[0]
                     id = int(row[21])

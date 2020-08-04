@@ -39,10 +39,10 @@ class LeagueRankData():
             self.strike_outs_ranks_std.append(int(np.std([stat.strike_outs[i] for stat in stats])))
 
     def disp(self):
-        print "Avg runs by rank: ", zip( self.runs_ranks, self.runs_ranks_std)
-        print "Avg rbi by rank: ", zip( self.rbi_ranks, self.rbi_ranks_std )
-        print "Avg homeruns by rank: ", zip( self.homeruns_ranks, self.homeruns_ranks_std )
-        print "Avg stolen bases by rank: ", zip( self.stolen_bases_ranks, self.stolen_bases_ranks_std )
-        print "Avg batting avg by rank: ", zip( self.batting_avg_ranks, self.batting_avg_ranks_std )
-        print "Avg stike outs by rank: ", zip( self.strike_outs_ranks, self.strike_outs_ranks_std )
+        print("Avg runs by rank: ", list(zip( self.runs_ranks, self.runs_ranks_std)))
+        print("Avg rbi by rank: ", list(zip( self.rbi_ranks, self.rbi_ranks_std )))
+        print("Avg homeruns by rank: ", list(zip( self.homeruns_ranks, self.homeruns_ranks_std )))
+        print("Avg stolen bases by rank: ", list(zip( self.stolen_bases_ranks, self.stolen_bases_ranks_std )))
+        print("Avg batting avg by rank: ", list(zip( self.batting_avg_ranks, self.batting_avg_ranks_std )))
+        print("Avg stike outs by rank: ", list(zip( self.strike_outs_ranks, self.strike_outs_ranks_std )))
 
