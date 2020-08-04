@@ -33,4 +33,6 @@ https://medium.com/@awjuliani/simple-reinforcement-learning-with-tensorflow-part
 
 https://github.com/awjuliani/DeepRL-Agents/blob/master/Double-Dueling-DQN.ipynb
 
-https://www.tensorflow.org/agents/tutorials/0_intro_rl **** 
+https://www.tensorflow.org/agents/tutorials/0_intro_rl DQN Not suitable to problem 
+
+https://pemami4911.github.io/blog/2016/08/21/ddpg-rl.html
