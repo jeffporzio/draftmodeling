@@ -3,18 +3,19 @@ import os
 import csv
 from math import ceil
 from random import shuffle
+from util.log import *
 
 # Placeholder
 from constants import POSITIONS
 
-class Playerpool(): 
+class Playerpool(object): 
 
     def __init__(self):
         self.pool = self.createPool()
         shuffle(self.pool)
 
     def createPool(self):
-        
+        logging.info("Initializing PlayerPool...")
         pool = []
         
         dir = "data/"
@@ -41,6 +42,7 @@ class Playerpool():
                     player = Player(name, id, runs, rbi, homeruns, stolen_bases, batting_avg, strike_outs, positions_allowed)
                     pool.append(player)
 
+        logging.info("Finished creating PlayerPool")
         return pool
 
     def disp(self):

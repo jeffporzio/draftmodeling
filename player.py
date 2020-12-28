@@ -1,7 +1,7 @@
 
 
 # Hitters
-class Player(): 
+class Player(object): 
 
     def __init__(self, name, id, runs, rbi, homeruns, stolen_bases, batting_avg, strike_outs, positions_allowed):
         

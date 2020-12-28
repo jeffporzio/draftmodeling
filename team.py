@@ -1,5 +1,5 @@
 
-from constants import *
+from constants import NUM_PLAYERS_PER_TEAM, MONEY, NUM_TEAMS, POSITIONS
 from player import Player
 
 # Place holder: 
@@ -12,7 +12,7 @@ for position in POSITIONS:
     empty_pos_dict[position] = 0
 
 
-class Team(): 
+class Team(object): 
     def __init__(self, name):
         
         self.player_list = []
@@ -58,7 +58,7 @@ class Team():
         if self.isFull():
             return -1
 
-        value = randrange(0,60)
+        value = randrange(0,20)
         # Stop the team from spending too much
         roster_size = len(self.player_list)
         max_bid_allowed = self.money - (NUM_PLAYERS_PER_TEAM - roster_size) + 1
@@ -70,18 +70,18 @@ class Team():
 
 
     def isFull(self): 
-        if len(self.player_list) >= NUM_PLAYERS_PER_TEAM:
-            return True
-        else: 
+        if len(self.player_list) < NUM_PLAYERS_PER_TEAM:
             return False
+        else: 
+            return True
 
 
     def disp(self):
         print()
-        print( "*** Roster: *** ")
-        print( "Size: ", len(self.player_list))
-        for player in self.player_list: 
-            print(player.name)
+        # print( "*** Roster: *** ")
+        # print( "Size: ", len(self.player_list))
+        # for player in self.player_list: 
+        #     print(player.name)
 
         print( "Runs: ", self.runs)
         print( "RBI: ", self.rbi)
@@ -90,4 +90,4 @@ class Team():
         print( "Batting AVG: ", self.batting_avg)
         print( "Stike outs: ", self.strike_outs)
         print( "Remaining Money: ", self.money)
-        print()
+        print()        
