@@ -1,9 +1,8 @@
 from player import Player
 import os
-import csv
-from math import ceil
 from random import shuffle
 from util.log import *
+from getSeasonData import getSeasonalBatterData
 
 # Placeholder
 from constants import POSITIONS
@@ -17,30 +16,21 @@ class Playerpool(object):
     def createPool(self):
         logging.info("Initializing PlayerPool...")
         pool = []
-        
-        dir = "../data/"
-        files = os.listdir(dir)
-        
-        for file in files:
-            if file != "data_2019.csv":
-                continue
+        df = getSeasonalBatterData("2019") 
+        for batter in df.iterrows(): 
+            playerData = batter[1]
+            name = playerData.Name
+            id = playerData.mlb_ID
+            runs = playerData.R
+            rbi = playerData.RBI
+            homeruns = playerData.HR
+            stolen_bases = playerData.SB
+            batting_avg = playerData.BA
+            strike_outs = playerData.SO
+            positions_allowed = POSITIONS # TODO: What?
 
-            with open(dir+file, "r") as f: 
-                reader = csv.reader(f)
-                next(reader) # Skip header line
-                for row in reader: 
-                    name = row[0]
-                    id = int(row[21])
-                    runs = int(row[5])
-                    rbi = int(row[6])
-                    homeruns = int(row[4])
-                    stolen_bases = int(row[7])
-                    batting_avg = float(row[12])
-                    strike_outs = int(ceil(float(row[3]) * float(row[9][:-1])/100)) # Help?
-                    positions_allowed = POSITIONS # row[1] # Didn't get this?
-
-                    player = Player(name, id, runs, rbi, homeruns, stolen_bases, batting_avg, strike_outs, positions_allowed)
-                    pool.append(player)
+            batter = Player(name, id, runs, rbi, homeruns, stolen_bases, batting_avg, strike_outs, positions_allowed)
+            pool.append(batter)
 
         logging.info("Finished creating PlayerPool")
         return pool
