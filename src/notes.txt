@@ -40,3 +40,36 @@ https://pemami4911.github.io/blog/2016/08/21/ddpg-rl.html
 
 Pulling in data: 
 Match 15th - Oct 15th Just 2019
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Daily League:       %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Either generic algorithm to "optimize" the team 
+Or NN to make thousands of examples every day, then train with the "answers" the next day? 
+ - Can this be done retroactively using the daily data? I think so. 
+Probably too large of a parameter space
+
+Approach 1: 
+Use genetic algo to pick optimal team based on raw data
+Pros: Easy, fast 
+Cons: Doesn't have a way to account for randomness in player performance
+player data --> projections to points conversion --> build a team based on those points
+
+Approach 2: 
+Train NN to predict player's values based on raw data and use that as an input to the optimization problem 
+Pros: Allows us to try and predict player performance somehow.  
+Cons: Requires learning TF. Not entierly sure the NN will be successful. 
+Training:
+players data --> NN which predicts points for that player that day
+actual next day data --> Used to construct training data 
+Usage: 
+Replace "projections to points conversion" in approach 1 with the predictive algorithm
+
+Approach 3: 
+Train NN to pick an entire team based on the raw data 
+Pros: Probably the most promising. 
+Cons: Too large of a parameter space.
+
+
+Code Approach 1, eventually generate enough datat to try Approach 2

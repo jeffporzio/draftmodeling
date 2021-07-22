@@ -2,7 +2,7 @@ from player import Player
 import os
 from random import shuffle
 from util.log import *
-from getSeasonData import getSeasonalBatterData
+from getSeasonData import getSeasonalBatterData, getSeasonalPitcherData
 
 # Placeholder
 from constants import POSITIONS
@@ -16,8 +16,8 @@ class Playerpool(object):
     def createPool(self):
         logging.info("Initializing PlayerPool...")
         pool = []
-        df = getSeasonalBatterData("2019") 
-        for batter in df.iterrows(): 
+        batter_df = getSeasonalBatterData("2019") 
+        for batter in batter_df.iterrows():
             playerData = batter[1]
             name = playerData.Name
             id = playerData.mlb_ID
@@ -31,6 +31,11 @@ class Playerpool(object):
 
             batter = Player(name, id, runs, rbi, homeruns, stolen_bases, batting_avg, strike_outs, positions_allowed)
             pool.append(batter)
+
+        pitcher_df = getSeasonalPitcherData("2019")
+        print(pitcher_df.columns)
+        # for pitcher in pitcher_df.iterrows(): 
+        
 
         logging.info("Finished creating PlayerPool")
         return pool
