@@ -1,52 +1,89 @@
-from player import Player
+from player import Batter, BatterStats, BatterStatsBuilder, Pitcher, PitcherStats, PitcherStatsBuilder
+from typing import List
 import os
 from random import shuffle
 from util.log import *
-from getSeasonData import getSeasonalBatterData, getSeasonalPitcherData
+from getPlayerData import getDailyPitcherData, getDailyBatterData, getSeasonalBatterData, getSeasonalPitcherData
 
 # Placeholder
-from constants import POSITIONS
+from constants import Positions
 
 class Playerpool(object): 
 
     def __init__(self):
-        self.pool = self.createPool()
-        shuffle(self.pool)
+        self.batterPool: List(Batter) = [] 
+        self.pitcherPool: List(Pitcher) = [] 
+        self.createPool()
+        shuffle(self.batterPool)
+        shuffle(self.pitcherPool)
 
     def createPool(self):
         logging.info("Initializing PlayerPool...")
-        pool = []
-        batter_df = getSeasonalBatterData("2019") 
-        for batter in batter_df.iterrows():
-            playerData = batter[1]
+        date = "2021-07-21"
+        batter_df = getDailyBatterData(date) 
+        pitcher_df = getDailyPitcherData(date)
+
+        print(batter_df.columns)
+        print(pitcher_df.columns)
+
+        # TODO: Add singles to .build() H - HR - Triples - Doubles
+        # TODO: Figure out how to get 2B and 3B out of df
+        # TODO: Figure out how to get player position
+        for batterData in batter_df.iterrows():
+            playerData = batterData[1]
+            batterStatsBuilder: BatterStatsBuilder = BatterStatsBuilder()
+            batterStats: BatterStats = batterStatsBuilder \
+                .setSingles(1) \
+                .setDoubles(1) \
+                .setTriples(1) \
+                .setHomeruns(playerData.HR) \
+                .setRunsBattedIn(playerData.RBI) \
+                .setRuns(playerData.R) \
+                .setBaseOnBalls(playerData.BB + playerData.IBB) \
+                .setHitByPitch(playerData.HBP) \
+                .setSacrificeFlies(playerData.SF) \
+                .setSacrificeHits(playerData.SH) \
+                .setStolenBases(playerData.SB) \
+                .build() 
             name = playerData.Name
             id = playerData.mlb_ID
-            runs = playerData.R
-            rbi = playerData.RBI
-            homeruns = playerData.HR
-            stolen_bases = playerData.SB
-            batting_avg = playerData.BA
-            strike_outs = playerData.SO
-            positions_allowed = POSITIONS # TODO: What?
+            batter: Batter = Batter(name, id, batterStats, Positions.INIT)
+            self.batterPool.append(batter)
 
-            batter = Player(name, id, runs, rbi, homeruns, stolen_bases, batting_avg, strike_outs, positions_allowed)
-            pool.append(batter)
+        # TODO: Figure out how to tell if starter 
+        # TODO: Figure out how to tell if they won (double header for releif pitcher?)
+        for pitcherData in pitcher_df.iterrows(): 
+            playerData = pitcherData[1]
+            pitcherStatsBuilder: PitcherStatsBuilder = PitcherStatsBuilder()
+            pitcherStats: PitcherStats = pitcherStatsBuilder \
+                .setIsStartingPitcher(-1) \
+                .setInningsPitched(playerData.IP) \
+                .setStrikeouts(playerData.SO) \
+                .setDidWin(-1) \
+                .setEarnedRunAllowed(playerData.ER) \
+                .setHitsAgainst(playerData.H) \
+                .setBaseOnBallsAgainst(playerData.BB + playerData.IBB) \
+                .setHitsBatsman(playerData.HBP) \
+                .setHolds(-1) \
+                .setSaves(playerData.SV) \
+                .setDidCompleteGame(playerData.IP >= 9) \
+                .build()
+            name = playerData.Name
+            id = -1 # playerData.mlb_ID
+            pitcher: Pitcher = Pitcher(name, id, pitcherStats, Positions.PITCHER)
+            self.pitcherPool.append(pitcher)
 
-        pitcher_df = getSeasonalPitcherData("2019")
-        print(pitcher_df.columns)
-        # for pitcher in pitcher_df.iterrows(): 
-        
+        # Actually put the data in the containers
 
         logging.info("Finished creating PlayerPool")
-        return pool
 
     def disp(self):
-        for player in self.pool: 
-            player.disp()
+        for player in self.batterPool: 
+            print(player)
+        for player in self.pitcherPool: 
+            print(player)
 
-def main():
-    pool = Playerpool()
-    pool.disp()
 
 if __name__ == "__main__":
-    main()
+    pool = Playerpool()
+    pool.disp()

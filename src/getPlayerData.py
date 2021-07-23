@@ -1,3 +1,4 @@
+from player import Batter
 from util.log import logging
 from baseball_scraper import batting_stats_range, pitching_stats_range
 from constants import SEASON_START_MONTH_DAY, SEASON_END_MONTH_DAY
@@ -16,5 +17,16 @@ def getSeasonalPitcherData(seasonYear):
     df = pitching_stats_range(seasonStartDate, seasonEndData)
     return df
 
+
+def getDailyBatterData(date): 
+    logging.info(f"Fetching Batter data for: {date}")
+    df = batting_stats_range(date,)
+    return df
+
+def getDailyPitcherData(date):
+    logging.info(f"Fetching Pitcher data for {date}")
+    df = pitching_stats_range(date,)
+    return df
+
 def main(): 
-    getSeasonalBatterData("2019")
+    getSeasonalBatterData("2021-07-21")

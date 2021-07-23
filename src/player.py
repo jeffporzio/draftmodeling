@@ -147,7 +147,7 @@ class PitcherStatsBuilder:
     def build(self) -> PitcherStats: 
         # TODO: Check with Mike on logic
         self.pitcherStats.didNoHitter = self.pitcherStats.hitsAgainst == 0
-        self.pitcherStats.didCompleteGameShutout = self.pitcherStats.didCompleteGame and self.pitcherStats.didNoHitter
+        self.pitcherStats.didCompleteGameShutout = self.pitcherStats.inningsPitched >= 9 and self.pitcherStats.earnedRunAllowed == 0
         self.pitcherStats.didSevenOrMoreInningsPitched = self.pitcherStats.inningsPitched >= 7
         self.pitcherStats.didTenOrMoreStrikeOuts = self.pitcherStats.strikeouts >= 10
         return self.pitcherStats
