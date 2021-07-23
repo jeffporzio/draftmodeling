@@ -13,6 +13,7 @@ class Stats(ABC):
 
 class BatterStats(Stats): 
     def __init__(self):
+        self.hits: int
         self.singles: int
         self.doubles: int
         self.triples: int
@@ -31,10 +32,12 @@ class BatterStatsBuilder(object):
         self.batterStats: BatterStats = BatterStats()
 
     def build(self)  -> BatterStats:
+        # TODO: Add singles to .build() H - HR - Triples - Doubles
+        self.batterStats.singles = self.batterStats.hits - self.batterStats.homeruns - self.batterStats.doubles
         return self.batterStats
-    
-    def setSingles(self, input):
-        self.batterStats.singles = input
+
+    def setHits(self, input):
+        self.batterStats.hits = input
         return self
 
     def setDoubles(self, input):
@@ -187,7 +190,7 @@ class Pitcher(Player):
 if __name__ == "__main__":
     batterStatsBuilder: BatterStatsBuilder = BatterStatsBuilder()
     batterStats: BatterStats = batterStatsBuilder \
-        .setSingles(1) \
+        .setHits(1) \
         .setDoubles(2) \
         .setTriples(3) \
         .setHomeruns(4) \
