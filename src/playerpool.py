@@ -23,8 +23,8 @@ class Playerpool(object):
         batter_df = getDailyBatterData(date) 
         pitcher_df = getDailyPitcherData(date)
 
-        print(batter_df.columns)
-        print(pitcher_df.columns)
+        # print(batter_df.columns)
+        # print(pitcher_df.columns)
 
         # TODO: Figure out how to get player position
         for batterData in batter_df.iterrows():
