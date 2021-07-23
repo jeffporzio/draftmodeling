@@ -26,15 +26,14 @@ class Playerpool(object):
         print(batter_df.columns)
         print(pitcher_df.columns)
 
-        # TODO: Figure out how to get 2B and 3B out of df
         # TODO: Figure out how to get player position
         for batterData in batter_df.iterrows():
             playerData = batterData[1]
             batterStatsBuilder: BatterStatsBuilder = BatterStatsBuilder()
             batterStats: BatterStats = batterStatsBuilder \
                 .setHits(playerData.H) \
-                .setDoubles(1) \
-                .setTriples(1) \
+                .setDoubles(playerData['2B']) \
+                .setTriples(playerData['3B']) \
                 .setHomeruns(playerData.HR) \
                 .setRunsBattedIn(playerData.RBI) \
                 .setRuns(playerData.R) \

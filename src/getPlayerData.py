@@ -29,4 +29,4 @@ def getDailyPitcherData(date):
     return df
 
 def main(): 
-    getSeasonalBatterData("2021-07-21")
+    batter_df = getDailyBatterData("2021-07-21")
