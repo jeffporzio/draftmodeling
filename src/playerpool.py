@@ -78,10 +78,10 @@ class Playerpool(object):
         logging.info("Finished creating PlayerPool")
 
     def disp(self):
-        for player in self.batterPool: 
-            print(player)
-        for player in self.pitcherPool: 
-            print(player)
+        for batter in self.batterPool: 
+            print(batter)
+        for pitcher in self.pitcherPool: 
+            print(pitcher)
 
 
 if __name__ == "__main__":
