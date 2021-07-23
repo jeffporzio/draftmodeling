@@ -32,7 +32,6 @@ class BatterStatsBuilder(object):
         self.batterStats: BatterStats = BatterStats()
 
     def build(self)  -> BatterStats:
-        # TODO: Add singles to .build() H - HR - Triples - Doubles
         self.batterStats.singles = self.batterStats.hits - self.batterStats.homeruns - self.batterStats.doubles
         return self.batterStats
 
