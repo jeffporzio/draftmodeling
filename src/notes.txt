@@ -73,3 +73,13 @@ Cons: Too large of a parameter space.
 
 
 Code Approach 1, eventually generate enough datat to try Approach 2
+
+
+
+### Hosting a webiste 
+Droplet from digital ocean $5/mo (get the smallest one for now)
+Google Domains One time cost + $5/yr
+VMWare for sshing into the container
+Google: "Digital Ocean Nginx guide"
+
+
