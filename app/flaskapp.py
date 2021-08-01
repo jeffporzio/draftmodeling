@@ -10,7 +10,8 @@ def hello():
 @app.route("/daily")
 def daily():
     title = "Daily"
-    return render_template('daily.html', title=title )
+    date = "8/1/2021"
+    return render_template('daily.html', title=title, date=date)
 
 
 if __name__ == "__main__":

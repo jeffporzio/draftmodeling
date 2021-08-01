@@ -117,4 +117,5 @@ Default port is 5000.  I have it set to run on 8080 manually.
 
 The above is probably how to do this in production.  It can also be run by running the flaskapp.py script. 
 
-
+Trying to figure out how to make this as close to a web components architecture as possible... I really donn't want to learn REACT or something.  Typescript WC might be better but missing some tools I am used to working with for those. 
+Each tempalte can be a "component" and we can include them as blocks, however I am not yet sure how to handle passing information to and from the components that need to agree on the same data. 

@@ -1,12 +1,13 @@
 {% extends "app_container.html" %}
 
-{% block content %}
-<h1> This is the daily draft page! </h1>
+    {% block daily %}
+    <h1> This is the daily draft page! </h1>
 
-{% if date == None %}
-    {<h2> {{date}} </h2>}
-{% else %}
-    <h2>Please input the date!</h2>
-{% endif %}
+    {% if date %}
+        <h2> {{date}} </h2>
+    {% else %}
+        <h2>Please input the date!</h2>
+    {% endif %}
+
 
 {% endblock %}
