@@ -128,3 +128,10 @@ Each tempalte can be a "component" and we can include them as blocks, however I 
  Put each component behind a (singlton?) factory so I can create multiple instances of them easily, without importing an instance. 
 
 Make a generic store class with pub/sub behavior so components can be dynamically updated as the state changes. 
+
+
+# Road Map: 
+
+Create a "data" page where we just display the statistics for hitter and pitchers in tables for the given input range of dates.  This lets us figure out the back end problems of getting all the data we need.  It also gives us a simple front end problem to solve to build up a framework. 
+
+Once we have all the data we need, we can work on actually doing the draft prediction algorithms for the daily draft team. 
