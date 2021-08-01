@@ -6,7 +6,9 @@ pip install baseball-scraper
 
 
 Other packages: 
+
 Numpy
+
 Pandas
 
 
