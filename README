@@ -1,4 +1,4 @@
-To install... 
+ # To install... 
 
 conda install python=3.9.4
 pip install pybaseball
@@ -8,3 +8,14 @@ pip install baseball-scraper
 Other packages: 
 Numpy
 Pandas
+
+
+# Project Structure: 
+
+## dailydraft/
+This is the current, up to date project.
+
+## seasondraft/ 
+This contains some initial sketches for classes I wanted to keep.  Originally from the DDPGN idea of picking a team for a season. 
+Some classes are missing and the code is not in a "nice" shape. 
+
