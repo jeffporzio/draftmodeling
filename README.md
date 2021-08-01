@@ -1,8 +1,8 @@
  # To install... 
 
-conda install python=3.9.4
-pip install pybaseball
-pip install baseball-scraper
+- conda install python=3.9.4
+- pip install pybaseball
+- pip install baseball-scraper
 
 
 Other packages: 
@@ -62,7 +62,7 @@ Plan is to use Flask + Jinja2 for the website?
 
 
 
-# LearningTF
+# LearningTF/
 Contains some code examples for doing a DDPGN in Tensor Flow.  No original content yet. 
 
 To decide value: 
