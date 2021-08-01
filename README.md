@@ -49,10 +49,10 @@ Some classes are missing and the code is not in a "nice" shape.
 
 
 # Hosting a webiste 
-Droplet from digital ocean $5/mo (get the smallest one for now)
-Google Domains One time cost + $5/yr
-VMWare for sshing into the container
-Google: "Digital Ocean Nginx guide"
+- Droplet from digital ocean $5/mo (get the smallest one for now)
+- Google Domains One time cost + $5/yr
+- VMWare for sshing into the container
+- Google: "Digital Ocean Nginx guide"
 
 Plan is to use Flask + Jinja2 for the website?
 
