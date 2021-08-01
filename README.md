@@ -103,3 +103,18 @@ https://github.com/awjuliani/DeepRL-Agents/blob/master/Double-Dueling-DQN.ipynb
 https://www.tensorflow.org/agents/tutorials/0_intro_rl DQN Not suitable to problem 
 
 https://pemami4911.github.io/blog/2016/08/21/ddpg-rl.html
+
+
+# flaskapp/
+
+## Running the app
+```
+set FLASK_APP=flaskapp.py
+set FLASK_DEBUG=1
+flask run
+```
+Default port is 5000.  I have it set to run on 8080 manually.
+
+The above is probably how to do this in production.  It can also be run by running the flaskapp.py script. 
+
+
