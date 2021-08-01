@@ -2,8 +2,8 @@
 <html>
 
 <head>
-    {% if title %}
-        <title>Draft Modeling - {{title}}</title>
+    {% if properties.title %}
+        <title>Draft Modeling - {{properties.title}}</title>
     {% else %}
         <title>Draft Modeling</title>
     {% endif %}
@@ -12,7 +12,7 @@
 
 <body>
     <div class="app-container">
-        {% block daily %}{% endblock %}
+        {% block content %}{% endblock %}
     </div>
 </body>
 

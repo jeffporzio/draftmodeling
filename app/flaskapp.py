@@ -1,17 +1,21 @@
-from flask import Flask, render_template
+from flask import Flask
+from webComponent import WebComponent, WCProperties
+from components.daily import daily_component
 
 app = Flask(__name__, instance_relative_config=True)
 
 @app.route("/hello")
 def hello():
-    return "<h1> Hello World <h1>"
+    value = 5
+    myProps = {"key": value}
+    properties = WCProperties(myProps)
+    web_component = WebComponent(properties, "web-component.html")
+    return web_component.render()
 
 
 @app.route("/daily")
 def daily():
-    title = "Daily"
-    date = "8/1/2021"
-    return render_template('daily.html', title=title, date=date)
+    return daily_component.render()
 
 
 if __name__ == "__main__":

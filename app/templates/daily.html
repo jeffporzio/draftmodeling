@@ -1,10 +1,10 @@
 {% extends "app_container.html" %}
 
-    {% block daily %}
+{% block content %}
     <h1> This is the daily draft page! </h1>
 
-    {% if date %}
-        <h2> {{date}} </h2>
+    {% if properties.date %}
+        <h2> {{ properties.date }} </h2>
     {% else %}
         <h2>Please input the date!</h2>
     {% endif %}
