@@ -1,0 +1,10 @@
+To install... 
+
+conda install python=3.9.4
+pip install pybaseball
+pip install baseball-scraper
+
+
+Other packages: 
+Numpy
+Pandas
