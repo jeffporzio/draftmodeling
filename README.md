@@ -113,7 +113,10 @@ set FLASK_APP=flaskapp.py
 set FLASK_DEBUG=1
 flask run
 ```
-Default port is 5000.  I have it set to run on 8080 manually.
+Default port is 5000.  I have it set to run on 8080 if you run the flaskapp.py script 
+```
+python flaskapp.py
+```
 
 The above is probably how to do this in production.  It can also be run by running the flaskapp.py script. 
 
