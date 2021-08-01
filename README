@@ -13,9 +13,11 @@ Pandas
 # Project Structure: 
 
 ## dailydraft/
-This is the current, up to date project.
+Tthe current, up to date project.
 
 ## seasondraft/ 
-This contains some initial sketches for classes I wanted to keep.  Originally from the DDPGN idea of picking a team for a season. 
+Contains some initial sketches for classes I wanted to keep.  Originally from the DDPGN idea of picking a team for a season. 
 Some classes are missing and the code is not in a "nice" shape. 
 
+## LearningTF
+Contains some code examples for doing a DDPGN in Tensor Flow.  No original content yet. 
