@@ -3,3 +3,4 @@ __pycache__/
 dailydraft/__pycache__/
 *.py[cod]
 *$py.class
+password.txt
