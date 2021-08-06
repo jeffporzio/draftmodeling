@@ -11,6 +11,21 @@ Other packages:
 - Pandas
 
 
+NVM: https://github.com/coreybutler/nvm-windows/releases
+Use "nvm-setup.zip"
+```
+nvm install 14
+```
+Should see: 
+```
+(draft) C:\Users\Jeff\draftmodeling>npm -v
+6.14.4
+
+(draft) C:\Users\Jeff\draftmodeling>node -v
+v14.0.0
+```
+
+
 # dailydraft/
 Either generic algorithm to "optimize" the team 
 Or NN to make thousands of examples every day, then train with the "answers" the next day? 
