@@ -158,10 +158,6 @@ overfitting to training data
 or otherwise inability to generalize
 think of it like terms in a n-D polynomial fit... if the function has really high dimension and high order terms you need more neurons or you'll only be able to fit to the region of the state space that your training data covers well
 
-Jeff Porzio, 9 min
-but an N-d polynomial can also fix the noise if N is too high ... which is over training?
-fit*
-
 Chris Stathis, 5 min
 if you have good performance on a large training set but bad performance on the test set its usually better to tweak the learning rate etc. than actually change the network structure
 if you can't even get good performance on the training set as you increase the size of it, then it might mean the network isn't generalizing well enough
