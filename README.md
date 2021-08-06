@@ -64,6 +64,8 @@ Plan is to use Flask + Jinja2 for the website?
 
 
 # LearningTF/
+
+## Deep Decision Policy Gradient Network
 Contains some code examples for doing a DDPGN in Tensor Flow.  No original content yet. 
 
 To decide value: 
@@ -103,6 +105,80 @@ https://github.com/awjuliani/DeepRL-Agents/blob/master/Double-Dueling-DQN.ipynb
 https://www.tensorflow.org/agents/tutorials/0_intro_rl DQN Not suitable to problem 
 
 https://pemami4911.github.io/blog/2016/08/21/ddpg-rl.html
+
+## Daily NN 
+
+To start from Chris: 
+```
+- Input player and output layer are fixed in size (# of stats, 1) with scalar values. 
+- Hidden layers are fully connected 
+- Start with 2 hidden layers 
+- Start with hidden layer size = input.size / 2 
+
+So my general plan: 
+Write data gathering scrips to catalog the history of baseball to generate thousands of examples 
+Write TF program to take that training set and train from it 
+Evaluate test:train splits for accuracy  
+
+Chris Stathis, 25 min
+anyways, ML question?
+
+Jeff Porzio, 25 min
+Yessss ok
+So this is recreational for fun
+I want to do some RL with baseball players for daily draft stuff.  So the idea is I feed in a bunch of stats about a player and I want the algo to predict how "well" they'll score the following day.
+I can scrub a shitton of test cases, I don't think data is going to be a problem.
+But I was wondering if you have some resources / advice on how I should pick the NN and what type of NN etc... number of internal layers, etc...
+The outside shape will be a bunch of inputs (I'll do some test trainings to figure out which are important?) and then output a single float "number of points" they'll be worth given those inputs.
+Inputs are all floats or ints
+(This is a simpler problem to the DDPGN we discussed last time.  I think that was more than I could chew)
+Tensor flow in Python
+
+Chris Stathis, 20 min
+cool, yeah that sounds easy enough
+sounds like you have an input and output layer with a fixed number of scalar inputs, and the hidden layers can just be fully connected
+i would start small; two layers is probably enough
+
+Jeff Porzio, 17 min
+Two hidden layers?
+
+Chris Stathis, 15 min
+yeah
+and start with hidden layer size = input layer size / 2 or something like that
+
+Chris Stathis, 13 min
+the more neurons you have the more training data you need, and since your problem is fairly simple / low-dimensional I would err on the side of a smaller net
+
+Jeff Porzio, 12 min
+Perfection. These are the sorts of rules of thumb I was looking for 😀
+What are some signs that I need more complexity / a different set up?
+
+Chris Stathis, 11 min
+overfitting to training data
+or otherwise inability to generalize
+think of it like terms in a n-D polynomial fit... if the function has really high dimension and high order terms you need more neurons or you'll only be able to fit to the region of the state space that your training data covers well
+
+Jeff Porzio, 9 min
+but an N-d polynomial can also fix the noise if N is too high ... which is over training?
+fit*
+
+Chris Stathis, 5 min
+if you have good performance on a large training set but bad performance on the test set its usually better to tweak the learning rate etc. than actually change the network structure
+if you can't even get good performance on the training set as you increase the size of it, then it might mean the network isn't generalizing well enough
+
+Jeff Porzio, 3 min
+Ok, gotcha.  So I am going to write a script to generate as close to the history of baseball as I can get (I've got this mostly tooled out, just need to figure out how to transform it into something savable, probs just a spreadsheet?).  I'll train using a subset of that and see how performance changes based on including more/less of that entire data set?
+Any hardware things I should aim for from the get go?  Do I want a GPU implementation from the start or is a CPU start ok?
+
+Chris Stathis, 1 min
+CPU is fine
+If you're using keras/tf you should be able to get GPU acceleration for free as long as you can figure out how to install it correctly
+
+Jeff Porzio, 1 min
+Sweet.
+Thank you, sir 😀
+
+```
 
 
 # flaskapp/

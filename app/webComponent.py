@@ -4,6 +4,7 @@ from flask import render_template
 # TODO: Set up oberver pattern and stores for data mangement?  
 class WCProperties(object):
     def __init__(self, propsDict: Dict):
+        # Set dynamic properties from income dict for nice syntax in .html templates
         for key in propsDict: 
             setattr(self, key, propsDict[key])
 
