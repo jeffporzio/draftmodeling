@@ -24,5 +24,9 @@
     "dependencies": {
         "react": "^17.0.2"
     },
-    "devDependencies": {}
+    "devDependencies": {
+        "@web/dev-server": "^0.1.28",
+        "lit-element": "^3.0.2",
+        "xstate": "^4.26.1"
+    }
 }
