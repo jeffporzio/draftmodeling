@@ -4,5 +4,3 @@ dailydraft/__pycache__/
 *.py[cod]
 *$py.class
 password.txt
-
-node_modules/
