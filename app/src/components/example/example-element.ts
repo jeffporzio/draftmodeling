@@ -3,7 +3,7 @@ import {customElement, property} from 'lit/decorators.js';
 import { styles } from './example-styles';
 
 @customElement('example-element')
-class exampleElement extends LitElement {
+export class exampleElement extends LitElement {
 
     static override styles = [styles];
 
@@ -20,5 +20,3 @@ class exampleElement extends LitElement {
         return html`<p>your ${this.adjective} template here</p>`;
     }
 }
-
-export{ exampleElement }

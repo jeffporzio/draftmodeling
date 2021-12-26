@@ -1,0 +1,1 @@
+{"version":3,"file":"my-counter-loader.d.ts","sourceRoot":"","sources":["../../../src/components/my-counter/my-counter-loader.ts"],"names":[],"mappings":"AAAA,OAAO,EAAC,UAAU,EAAC,MAAM,KAAK,CAAC;AAC/B,OAAO,EAAO,cAAc,EAAC,MAAM,UAAU,CAAC;AAG9C,cACM,oBAAqB,SAAQ,UAAU;IAEzC,KAAK,EAAE,MAAM,CAAK;IAET,MAAM,IAAI,cAAc;CAGpC;AAED,OAAO,EAAE,oBAAoB,EAAE,CAAA"}

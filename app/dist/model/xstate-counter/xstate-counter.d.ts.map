@@ -1,0 +1,1 @@
+{"version":3,"file":"xstate-counter.d.ts","sourceRoot":"","sources":["../../../src/model/xstate-counter/xstate-counter.ts"],"names":[],"mappings":"AAEA,aAAK,YAAY,GACf;IAAE,IAAI,EAAE,KAAK,CAAA;CAAE,GACb;IAAE,IAAI,EAAE,KAAK,CAAA;CAAE,CAAC;AAEpB,UAAU,cAAc;IACtB,KAAK,EAAE,MAAM,CAAC;CACf;AAED,eAAO,MAAM,cAAc;;;+DAuBzB,CAAC"}

@@ -4,15 +4,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { LitElement, html } from 'lit';
+import { LitElement } from 'lit';
+import { html } from 'lit-html';
 import { customElement } from 'lit/decorators.js';
 let exampleElementLoader = class exampleElementLoader extends LitElement {
+    constructor() {
+        super(...arguments);
+        this.count = 0;
+    }
     render() {
-        return html `<example-element></example-element>`;
+        return html `<my-counter></my-counter>`;
     }
 };
 exampleElementLoader = __decorate([
     customElement("example-element-loader")
 ], exampleElementLoader);
 export { exampleElementLoader };
-//# sourceMappingURL=example-loader.js.map
+//# sourceMappingURL=my-counter-loader.js.map
