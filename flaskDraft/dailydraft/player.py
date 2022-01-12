@@ -1,7 +1,7 @@
 from abc import ABC
 from typing import Union
 
-from constants import Positions
+from dailydraft.util.constants import Positions
 
 class Stats(ABC):
     def __repr__(self): 
@@ -175,7 +175,6 @@ class Batter(Player):
         self.stats = batterStats
         self.position = position
 
-
 class Pitcher(Player):
     def __init__(self, name: str, id: int, pitcherStats: PitcherStats, position: str):
         Player.__init__(self, name, id)
@@ -222,3 +221,6 @@ if __name__ == "__main__":
 
     pitcher: Pitcher = Pitcher("Jane Doe", 2, pitcherStats, Positions.PITCHER)
     print(pitcher)
+
+    print("Printing to check how it will look like")
+    print(PlayerEncoder().encode(batter))

@@ -1,25 +1,24 @@
-from player import Batter, BatterStats, BatterStatsBuilder, Pitcher, PitcherStats, PitcherStatsBuilder
+from dailydraft.player import Batter, BatterStats, BatterStatsBuilder, Pitcher, PitcherStats, PitcherStatsBuilder
 from typing import List
 import os
 from random import shuffle
-from util.log import *
-from getPlayerData import getDailyPitcherData, getDailyBatterData, getSeasonalBatterData, getSeasonalPitcherData
+from dailydraft.util.log import *
+from dailydraft.getPlayerData import getDailyPitcherData, getDailyBatterData #, getSeasonalBatterData, getSeasonalPitcherData
 
 # Placeholder
-from constants import Positions
+from dailydraft.util.constants import Positions
 
 class Playerpool(object): 
 
-    def __init__(self):
+    def __init__(self, date):
         self.batterPool: List(Batter) = [] 
         self.pitcherPool: List(Pitcher) = [] 
-        self.createPool()
+        self.createPool(date)
         shuffle(self.batterPool)
         shuffle(self.pitcherPool)
 
-    def createPool(self):
+    def createPool(self, date):
         logging.info("Initializing PlayerPool...")
-        date = "2021-07-21"
         batter_df = getDailyBatterData(date) 
         pitcher_df = getDailyPitcherData(date)
 
